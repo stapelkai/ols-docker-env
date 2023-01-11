@@ -13,6 +13,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+    
       - uses: actions/checkout@v3
       - name: Setup
         run: |
@@ -20,6 +21,7 @@ jobs:
           docker-compose up -d
           docker image ls
           sleep 10
+          
       - name: Verify
         run: bash .travis/verify.sh    
       - name: Clean up 
