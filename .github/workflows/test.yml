@@ -1,19 +1,19 @@
-name: docker-build
+name: Test run stack
 
 on:
   push:
     branches:
-      - master
+      - main
 
   pull_request:
-    branches:
-      - master
+    types:
+      - open, repen
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Setup
         run: |
           docker-compose -v
